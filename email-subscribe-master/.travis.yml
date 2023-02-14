@@ -1,0 +1,16 @@
+language: python
+sudo: enabled
+notifications:
+  email:
+    recipients:
+      - chenjiandongx@qq.com
+    on_success: change # default: change
+    on_failure: always # default: always
+python:
+  - 3.6
+before_install:
+  - pip install -r requirements.txt
+  - sudo apt-get install fonts-droid-fallback ttf-wqy-zenhei ttf-wqy-microhei fonts-arphic-ukai fonts-arphic-uming
+  - sudo fc-cache -f -v
+script:
+  - python3 subscribe_one.py
